@@ -39,6 +39,16 @@ Puppet::Type.newtype(:network_config) do
     end
   end
 
+  newproperty(:ip6address) do
+    desc 'The IPv6 address of the network interfaces'
+    if defined? IPAddress
+      validate do |value|
+        raise ArgumentError, "#{self.class} requires a valid ip6address for the ip6address property" unless IPAddress.valid? value
+        # provider.validate
+      end
+    end
+  end
+
   newproperty(:netmask) do
     desc 'The subnet mask to apply to the interface'
     if defined? IPAddress
