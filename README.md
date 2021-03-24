@@ -9,7 +9,7 @@
 
 ## Overview
 
-Manage non-volatile network and route configuration.
+Manage non-volatile network and route configuration. This fork intends to support dual-stack IPv6+IPv4 which upstream seems not to.
 
 ## Usage
 
