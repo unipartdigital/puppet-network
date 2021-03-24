@@ -47,7 +47,7 @@ Puppet::Type.type(:network_config).provide(:interfaces) do
 
     # These fields are going to get rearranged to resolve issue 16
     # https://github.com/adrienthebo/puppet-network/issues/16
-    attr_accessor :ipaddress, :netmask, :family, :method, :mtu, :mode
+    attr_accessor :ipaddress, :ip6address, :netmask, :family, :method, :mtu, :mode
 
     # Options hash
     attr_reader :options
@@ -64,6 +64,7 @@ Puppet::Type.type(:network_config).provide(:interfaces) do
         onboot: @onboot,
         hotplug: @hotplug,
         ipaddress: @ipaddress,
+        ip6address: @ip6address,
         netmask: @netmask,
         family: @family,
         method: @method,
@@ -285,6 +286,7 @@ Puppet::Type.type(:network_config).provide(:interfaces) do
 
       [
         [:ipaddress, 'address'],
+        [:ip6address, 'address6'],
         [:netmask,   'netmask'],
         [:mtu,       'mtu']
       ].each do |(property, section)|

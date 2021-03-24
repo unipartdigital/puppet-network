@@ -33,6 +33,7 @@ Puppet::Type.type(:network_config).provide(:redhat) do
 
   NAME_MAPPINGS = {
     ipaddress: 'IPADDR',
+    ip6address: 'IPV6ADDR',
     netmask: 'NETMASK',
     method: 'BOOTPROTO',
     onboot: 'ONBOOT',
