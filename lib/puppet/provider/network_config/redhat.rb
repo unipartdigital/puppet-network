@@ -230,6 +230,7 @@ Puppet::Type.type(:network_config).provide(:redhat) do
       pairs[key] = %("#{val}") if val.is_a?(String) && val.match(%r{\s+})
     end
 
+    pairs.sort!
     pairs
   end
 
